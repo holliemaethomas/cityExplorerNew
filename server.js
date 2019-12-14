@@ -2,15 +2,21 @@
 
 // pull in requirements
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const superagent = require('superagent');
+const pg = require('pg');
 require('dotenv').config();
 
 // define localhost
 const PORT = process.env.PORT || 3000;
 
+// declare client
+const client = new pg.Client(process.env.DATABASE_URL)
+client.connect();
+
 // declare globals
 const app = express();
+app.use(cors());
 
 app.get('/location', getLocationData)
 app.get('/weather', getWeatherData)
