@@ -1,7 +1,3 @@
-DROP TABLE IF EXISTS city; 
-DROP TABLE IF EXISTS weather; 
-DROP TABLE IF EXISTS events; 
-DROP TABLE IF EXISTS hikes; 
 
 
 CREATE TABLE IF NOT EXISTS city(
@@ -28,18 +24,6 @@ event_date TEXT,
 summary TEXT
 );
 
-CREATE TABLE IF NOT EXISTS hikes(
-id SERIAL PRIMARY KEY,
-name VARCHAR(255),
-location VARCHAR (255),
-trail_length NUMERIC (8, 6),
-stars FLOAT,
-star_votes NUMERIC(8,6),
-summary TEXT,
-trail_url TEXT,
-conditions VARCHAR (255),
-condition_date VARCHAR (255),
-condition_time VARCHAR (255)
-);
+
 
 
